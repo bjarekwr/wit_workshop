@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '5.1.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://plugins.gradle.org/m2/'
+    }
+    maven {
+        url 'https://nexus-dev.wremitshared.com/repository/maven-releases/'
+    }
+}
+
+ext {
+    appiumJavaClientVersion = '7.5.1'
+    aeonbitsOwnerVersion = '1.0.10'
+    junitJupiterVersion = '5.5.1'
+    wiremockVersion = '2.26.3'
+    customCodesVersion = '1.0.4'
+    libphonenumberVersion = '8.12.5'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "io.appium:java-client:${appiumJavaClientVersion}"
+    testImplementation "org.aeonbits.owner:owner:${aeonbitsOwnerVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testImplementation "com.github.tomakehurst:wiremock:${wiremockVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+    testImplementation "com.worldremit:custom-iso-codes:${customCodesVersion}"
+    testImplementation "com.googlecode.libphonenumber:libphonenumber:${libphonenumberVersion}"
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
