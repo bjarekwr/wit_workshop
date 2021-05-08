@@ -1,20 +1,16 @@
-package model.legacyapi.countries;
+package mocks.TC3.country;
 
 import com.google.gson.annotations.SerializedName;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.worldremit.codes.CountryCode;
 import lombok.Builder;
 import lombok.val;
-
-import java.util.Arrays;
-import java.util.List;
-
-import static com.worldremit.codes.CountryCode.*;
+import mocks.Codes.CountryCode;
 
 @Builder
-public class Countries {
+// Quite similar to PopularDestination, FavDestiantion, Destination probably worth to
+// leave only destination
+public class Info {
 
-    public static final String DUMMY_FLAG_PNG = "https://10.0.2.2/dummy_flag.png";
     public String id;
     public String code;
     public String name;
@@ -24,19 +20,15 @@ public class Countries {
     public Integer dialCode;
     public String poster;
 
-    public static List<Countries> getDefaultCountries() {
-        return Arrays.asList(get(GB), get(PH), get(IN), get(JP));
-    }
-
-    public static Countries get(CountryCode countryCode) {
+    public static Info getInfoFor(CountryCode countryCode) {
         val dialCode = PhoneNumberUtil.getInstance().getCountryCodeForRegion(countryCode.getAlpha2());
-        return Countries.builder()
+        return Info.builder()
             .id(String.valueOf(dialCode))
             .code(countryCode.getAlpha2())
             .name(countryCode.getName())
             .shortName(countryCode.getAlpha3())
             .dialCode(dialCode)
-            .poster(DUMMY_FLAG_PNG)
+            .poster("https://10.0.2.2/dummy_flag.png")
             .build();
     }
 }

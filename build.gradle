@@ -29,10 +29,13 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation "io.appium:java-client:${appiumJavaClientVersion}"
     testImplementation "org.aeonbits.owner:owner:${aeonbitsOwnerVersion}"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
     testImplementation "com.github.tomakehurst:wiremock:${wiremockVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
-    testImplementation "com.worldremit:custom-iso-codes:${customCodesVersion}"
     testImplementation "com.googlecode.libphonenumber:libphonenumber:${libphonenumberVersion}"
     implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+test {
+    useJUnitPlatform()
 }

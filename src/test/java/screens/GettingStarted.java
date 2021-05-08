@@ -21,29 +21,6 @@ public class GettingStarted {
     @AndroidFindBy(id = "com.worldremit.android.dev:id/sign_in_button")
     private AndroidElement signInButton;
 
-    @AndroidFindBy(id = "notification_dialog_primary_button")
-    private AndroidElement notificationButton;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.worldremit.android.dev:id/title_text_view\")"
-                                 + ".textMatches(\"We’re Simple\")")
-    private AndroidElement firstOnboardingPage;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.worldremit.android.dev:id/title_text_view\")"
-                                 + ".textMatches(\"We’re Fast\")")
-    private AndroidElement secondOnboardingPage;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.worldremit.android.dev:id/title_text_view\")"
-                                 + ".textMatches(\"We’re Safe\")")
-    private AndroidElement thirdOnboardingPage;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.worldremit.android.dev:id/title_text_view\")"
-                                 + ".textMatches(\"We’re Low Cost\")")
-    private AndroidElement fourthOnboardingPage;
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.worldremit.android.dev:id/title_text_view\")"
-                                 + ".text(\"125,000+ five-star reviews\")")
-    private AndroidElement fifthOnboardingPage;
-
     @AndroidFindBy(id = "page_indicator")
     private AndroidElement pageIndicator;
 
@@ -51,42 +28,11 @@ public class GettingStarted {
         PageFactory.initElements(new AppiumFieldDecorator(DriverProvider.getInstance(), Duration.ofSeconds(ENVIRONMENT_CONFIG.getWaitingTimeoutInSeconds())), this);
     }
 
-
     public void clickSignIn() {
         signInButton.click();
     }
 
-
-    public void clickCheckRate() {
-        getStartedButton.click();
-    }
-
-
     public void clickGetStarted() {
         getStartedButton.click();
-    }
-
-    public AndroidElement getFirstOnboardingPage() {
-        return firstOnboardingPage;
-    }
-
-    public AndroidElement getSecondOnboardingPage() {
-        return secondOnboardingPage;
-    }
-
-    public AndroidElement getThirdOnboardingPage() {
-        return thirdOnboardingPage;
-    }
-
-    public AndroidElement getFourthOnboardingPage() {
-        return fourthOnboardingPage;
-    }
-
-    public AndroidElement getFifthOnboardingPage() {
-        return fifthOnboardingPage;
-    }
-
-    public AndroidElement getPageIndicator() {
-        return pageIndicator;
     }
 }

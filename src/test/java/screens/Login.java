@@ -3,6 +3,7 @@ package screens;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import models.Sender;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -65,6 +66,11 @@ public class Login {
 
     public void login(final String email, final String password) {
         fillLoginData(email, password);
+        clickLoginButton();
+    }
+
+    public void login(Sender sender) {
+        fillLoginData(sender.getEmail(), sender.getPassword());
         clickLoginButton();
     }
 
