@@ -33,15 +33,4 @@ public class Address {
             .country(GB.getName())
             .build();
     }
-
-    public static Address getLookupGbAddress() {
-        return Address.builder()
-            .flatNumber("22")
-            .buildingNameNo("Imperial House 12-14")
-            .street("Exchange Street")
-            .city("Aberdeen")
-            .postcode("AB11 6PH")
-            .country(GB.getName())
-            .build();
-    }
 }
