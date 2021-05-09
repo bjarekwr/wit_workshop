@@ -27,8 +27,6 @@ public class WRAndroidTests extends BaseTest {
     // 2. Navigate to Login screen
     // 3. Check if login screen is visible by checking presence of any screen element
 
-
-
     //TODO
     // #2
     // 1. Open App
@@ -36,7 +34,6 @@ public class WRAndroidTests extends BaseTest {
     // 3. Click Sing-in button
     // 4. Check error message next to email field
     //    Message should be: Please enter an email address
-
 
     //TODO
     // #3

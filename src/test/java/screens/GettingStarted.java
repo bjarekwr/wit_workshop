@@ -11,25 +11,13 @@ import java.time.Duration;
 
 import static settings.EnvironmentConfig.ENVIRONMENT_CONFIG;
 
-
 public class GettingStarted {
-
 
     @AndroidFindBy(id = "get_started_button")
     private AndroidElement getStartedButton;
 
-    @AndroidFindBy(id = "com.worldremit.android.dev:id/sign_in_button")
-    private AndroidElement signInButton;
-
-    @AndroidFindBy(id = "page_indicator")
-    private AndroidElement pageIndicator;
-
     public GettingStarted() {
         PageFactory.initElements(new AppiumFieldDecorator(DriverProvider.getInstance(), Duration.ofSeconds(ENVIRONMENT_CONFIG.getWaitingTimeoutInSeconds())), this);
-    }
-
-    public void clickSignIn() {
-        signInButton.click();
     }
 
     public void clickGetStarted() {
