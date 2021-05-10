@@ -16,6 +16,9 @@ public class GettingStarted {
     @AndroidFindBy(id = "get_started_button")
     private AndroidElement getStartedButton;
 
+    @AndroidFindBy(id = "")
+    private AndroidElement signInButton ;
+
     public GettingStarted() {
         PageFactory.initElements(new AppiumFieldDecorator(DriverProvider.getInstance(), Duration.ofSeconds(ENVIRONMENT_CONFIG.getWaitingTimeoutInSeconds())), this);
     }

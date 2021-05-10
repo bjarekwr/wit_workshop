@@ -31,7 +31,6 @@ public class CountrySelection {
         searchWith(countryCode.getName());
     }
 
-
     public void searchForCountry(final String countryName) {
         searchButton.click();
         searchText.setValue(countryName);

@@ -20,6 +20,11 @@ public class WRAndroidTests extends BaseTest {
         signUp.clickSignUpButton();
     }
 
+    @Test
+    public void test1(){
+
+    }
+
     //TODO
     // Create following testcases:
     // #1

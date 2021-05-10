@@ -36,7 +36,7 @@ public class DriverProvider {
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,PLATFORM_CONFIG.getAppActivity());
         capabilities.setCapability(AndroidMobileCapabilityType.AVD, PLATFORM_CONFIG.avd());
         capabilities.setCapability("app","/Users/bjarek/Desktop/com.worldremit.android.dev.qa.apk");
-        capabilities.setCapability("newCommandTimeout","999999");
+        capabilities.setCapability(PLATFORM_CONFIG.newCommandTimeout(),"999999");
         // Initialize driver
         return new AndroidDriver<AndroidElement>(new URL(PLATFORM_CONFIG.getAppiumUrl()), capabilities);
 

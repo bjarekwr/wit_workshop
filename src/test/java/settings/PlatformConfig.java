@@ -48,4 +48,7 @@ public interface PlatformConfig extends Config {
     @Key("dateTimePattern")
     @DefaultValue("yyyy-MM-dd'T'HH:mm:ss.SS'Z'")
     String dateTimePattern();
+
+    @Key("newCommandTimeout")
+    String newCommandTimeout();
 }

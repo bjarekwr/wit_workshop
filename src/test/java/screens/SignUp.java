@@ -8,9 +8,11 @@ import models.Sender;
 import org.openqa.selenium.support.PageFactory;
 import utils.DriverProvider;
 
+import java.time.Duration;
 import java.util.List;
 
 import static io.appium.java_client.touch.offset.PointOption.point;
+import static settings.EnvironmentConfig.ENVIRONMENT_CONFIG;
 
 public class SignUp {
 
@@ -66,7 +68,7 @@ public class SignUp {
     private AndroidElement passwordFieldValidation;
 
     public SignUp() {
-        PageFactory.initElements(new AppiumFieldDecorator(DriverProvider.getInstance()), this);
+        PageFactory.initElements(new AppiumFieldDecorator(DriverProvider.getInstance(), Duration.ofSeconds(ENVIRONMENT_CONFIG.getWaitingTimeoutInSeconds())), this);
     }
 
     public void fillForm(Sender sender) {
